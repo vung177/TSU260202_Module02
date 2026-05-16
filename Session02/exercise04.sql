@@ -1,0 +1,8 @@
+USE module2_sql;
+
+CREATE TABLE users(
+user_id INT PRIMARY KEY AUTO_INCREMENT,
+user_name VARCHAR(255) UNIQUE,
+user_password VARCHAR(255) NOT NULL,
+user_status VARCHAR(10) DEFAULT 'ACTIVE' CHECK (user_status IN ('ACTIVE','INACTIVE'))
+)
