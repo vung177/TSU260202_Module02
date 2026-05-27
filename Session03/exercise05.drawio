@@ -4,10 +4,10 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="10" value="giáo viên" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+                <mxCell id="10" value="teachers" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
                     <mxGeometry x="100" y="350" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="khóa học" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+                <mxCell id="30" value="course" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
                     <mxGeometry x="460" y="350" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="60" value="students" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
