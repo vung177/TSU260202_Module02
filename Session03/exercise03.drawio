@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="library-er-diagram" name="Page-1">
-        <mxGraphModel dx="1018" dy="784" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+        <mxGraphModel dx="1131" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -34,7 +34,7 @@
                 <mxCell id="22" value="N" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=13;" parent="1" vertex="1">
                     <mxGeometry x="395" y="275" width="40" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="books" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+                <mxCell id="30" value="Sach" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
                     <mxGeometry x="675" y="270" width="130" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="31" value="" style="endArrow=none;html=1;" parent="1" source="20" target="30" edge="1">
