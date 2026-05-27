@@ -8,4 +8,4 @@ CREATE TABLE users (
     status VARCHAR(20) DEFAULT 'active'
 );
 ALTER TABLE users
-ADD CONSTRAINT chk_status CHECK (status IN ('active', 'inactive', 'banned'));
+ADD CONSTRAINT check_status CHECK (status IN ('active', 'inactive', 'banned'));
