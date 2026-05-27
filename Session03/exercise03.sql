@@ -1,25 +1,25 @@
 USE module2_sql;
-DROP TABLE IF EXISTS borrow;
-DROP TABLE IF EXISTS books;
-DROP TABLE IF EXISTS readers;
-CREATE TABLE readers (
-    reader_id INT AUTO_INCREMENT PRIMARY KEY,
-    reader_name VARCHAR(100) NOT NULL,
-    phone VARCHAR(15)
+DROP TABLE IF EXISTS order_items;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS products;
+
+CREATE TABLE orders (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    order_date DATE NOT NULL,
+    customer_name VARCHAR(100) NOT NULL
 );
-CREATE TABLE books (
-    book_id INT AUTO_INCREMENT PRIMARY KEY,
-    book_title VARCHAR(200) NOT NULL,
-    author VARCHAR(100)
+
+CREATE TABLE products (
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(200) NOT NULL,
+    price DECIMAL(10, 2)
 );
-CREATE TABLE borrow (
-    borrow_id INT AUTO_INCREMENT PRIMARY KEY,
-    reader_id INT NOT NULL,
-    book_id INT NOT NULL,
-    borrow_date DATE,
-    return_date DATE,
-    FOREIGN KEY (reader_id) REFERENCES readers(reader_id),
-    FOREIGN KEY (book_id) REFERENCES books(book_id)
+
+CREATE TABLE order_items (
+    order_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    PRIMARY KEY (order_id, product_id),
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
-ALTER TABLE borrow
-MODIFY borrow_date DATE NOT NULL;
