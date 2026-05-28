@@ -9,7 +9,7 @@ CREATE TABLE employees (
     phone VARCHAR(15),
     emp_email VARCHAR(100) UNIQUE
 );
--- 2. Thêm tối thiểu 10 dữ liệu mẫu (Có điều chỉnh tên chứa 'Anh' và lương dưới 5M để chạy thử nghiệm)
+-- Dữ liệu mẫu 
 INSERT INTO employees (
         full_name,
         birth_year,
@@ -26,7 +26,6 @@ VALUES (
         '0912345678',
         'anguyen@example.com'
     ),
-    -- Tên chứa 'Anh'
     (
         'Tran Thi B',
         1998,
@@ -43,7 +42,6 @@ VALUES (
         '0901234567',
         'clevan@example.com'
     ),
-    -- Tên chứa 'Anh'
     (
         'Pham Minh D',
         1993,
@@ -60,7 +58,6 @@ VALUES (
         NULL,
         'ehoang@example.com'
     ),
-    -- Điện thoại NULL
     (
         'Vu Hoang F',
         1992,
@@ -85,7 +82,6 @@ VALUES (
         NULL,
         'hngo@example.com'
     ),
-    -- Điện thoại NULL
     (
         'Bui Thi I',
         1994,
@@ -103,9 +99,9 @@ VALUES (
         'jly@example.com'
     );
 -- Lương dưới 5M để test DELETE
--- ==========================================
--- YÊU CẦU 1: TRUY VẤN DỮ LIỆU (SELECT)
--- ==========================================
+-- ================
+-- TRUY VẤN DỮ LIỆU
+-- ================
 -- a. Nhân viên có lương từ 10tr đến 20tr
 SELECT *
 FROM employees
