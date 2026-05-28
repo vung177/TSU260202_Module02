@@ -1,15 +1,17 @@
--- 1. Hiển thị sinh viên chưa có email (email là NULL)
-SELECT * FROM students 
+-- 1. Sinh viên chưa có email
+SELECT *
+FROM students
 WHERE email IS NULL;
-
--- 2. Hiển thị sinh viên đã có email (email khác NULL)
-SELECT * FROM students 
+-- 2. Sinh viên đã có email
+SELECT *
+FROM students
 WHERE email IS NOT NULL;
-
--- 3. Hiển thị sinh viên có họ tên bắt đầu bằng chữ "Ng"
-SELECT * FROM students 
+-- 3. Sinh viên có họ tên bắt đầu bằng chữ "Ng"
+SELECT *
+FROM students
 WHERE student_name LIKE 'Ng%';
-
--- 4. Hiển thị sinh viên không phải giới tính Nam (khác 'Male')
-SELECT * FROM students 
-WHERE gender <> 'Male'; -- hoặc dùng != 'Male'
+-- 4. Sinh viên không phải giới tính Nam
+SELECT *
+FROM students
+WHERE gender <> 'Male';
+-- hoặc WHERE gender != 'Male';
