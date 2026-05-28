@@ -1,7 +1,5 @@
 USE module2_sql;
--- Xóa bảng cũ nếu đã tồn tại để tránh lỗi khi chạy lại
 DROP TABLE IF EXISTS employees;
--- 1. Tạo bảng employees
 CREATE TABLE employees (
     emp_id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
@@ -108,19 +106,19 @@ VALUES (
 -- ==========================================
 -- YÊU CẦU 1: TRUY VẤN DỮ LIỆU (SELECT)
 -- ==========================================
--- a. Hiển thị danh sách nhân viên có mức lương từ 10.000.000 đến 20.000.000
+-- a. Nhân viên có lương từ 10tr đến 20tr
 SELECT *
 FROM employees
 WHERE salary BETWEEN 10000000 AND 20000000;
--- b. Hiển thị nhân viên thuộc phòng ban IT hoặc HR
+-- b. Nhân viên thuộc phòng ban IT hoặc HR
 SELECT *
 FROM employees
 WHERE department IN ('IT', 'HR');
--- c. Hiển thị nhân viên có họ tên chứa chữ "Anh"
+-- c. Nhân viên có họ tên chứa chữ "Anh"
 SELECT *
 FROM employees
 WHERE full_name LIKE '%Anh%';
--- d. Hiển thị nhân viên chưa có số điện thoại (phone IS NULL)
+-- d. Nhân viên chưa có số điện thoại
 SELECT *
 FROM employees
 WHERE phone IS NULL;
@@ -133,11 +131,11 @@ SET SQL_SAFE_UPDATES = 0;
 UPDATE employees
 SET salary = salary * 1.10
 WHERE department = 'IT';
--- b. Cập nhật số điện thoại cho nhân viên chưa có số điện thoại (gán số mặc định hoặc số mới)
+-- b. Cập nhật số điện thoại cho nhân viên chưa có số điện thoại
 UPDATE employees
 SET phone = '0909999999'
 WHERE phone IS NULL;
--- c. Xóa nhân viên có mức lương thấp hơn 5.000.000
+-- c. Xóa nhân viên có lương thấp hơn 5.000.000
 DELETE FROM employees
 WHERE salary < 5000000;
 -- Bật lại Safe Update Mode để bảo vệ cơ sở dữ liệu
