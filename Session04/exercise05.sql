@@ -122,23 +122,23 @@ WHERE full_name LIKE '%Anh%';
 SELECT *
 FROM employees
 WHERE phone IS NULL;
--- ==========================================
--- YÊU CẦU 2: CẬP NHẬT & XÓA DỮ LIỆU (UPDATE - DELETE)
--- ==========================================
--- Tắt Safe Update Mode tạm thời để cập nhật hàng loạt không cần cột khóa chính trong WHERE
+-- ======================
+-- CẬP NHẬT & XÓA DỮ LIỆU
+-- ======================
+-- Tắt an toàn của SQL
 SET SQL_SAFE_UPDATES = 0;
--- a. Cập nhật lương tăng thêm 10% cho nhân viên phòng IT
+-- a. Tăng lương 10% cho nhân viên phòng IT
 UPDATE employees
 SET salary = salary * 1.10
 WHERE department = 'IT';
--- b. Cập nhật số điện thoại cho nhân viên chưa có số điện thoại
+-- b. Cập nhật số điện thoại        
 UPDATE employees
 SET phone = '0909999999'
 WHERE phone IS NULL;
--- c. Xóa nhân viên có lương thấp hơn 5.000.000
+-- c. Xóa nhân viên có lương thấp hơn 5tr
 DELETE FROM employees
 WHERE salary < 5000000;
--- Bật lại Safe Update Mode để bảo vệ cơ sở dữ liệu
+-- Bật lại an toàn của SQL
 SET SQL_SAFE_UPDATES = 1;
 -- Kiểm tra lại bảng sau khi UPDATE & DELETE
 SELECT *
