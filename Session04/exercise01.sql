@@ -1,14 +1,27 @@
--- 1. Thêm các cột còn thiếu vào bảng students (chỉ thêm date_of_birth và gender, không thêm email vì đã có sẵn)
-ALTER TABLE students ADD COLUMN date_of_birth DATE;
-ALTER TABLE students ADD COLUMN gender VARCHAR(10);
+-- Tạm thời tắt kiểm tra khóa ngoại để có thể DROP và CREATE lại bảng students mà không bị lỗi ràng buộc ở các bài cũ
+SET FOREIGN_KEY_CHECKS = 0;
 
--- 2. Thêm dữ liệu vào bảng students (ít nhất 5 sinh viên, 1 sinh viên không có email)
-INSERT INTO students (full_name, date_of_birth, gender, email) VALUES
+DROP TABLE IF EXISTS students;
+
+-- Tạo lại bảng students mới với cấu trúc chuẩn
+CREATE TABLE students (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    student_name VARCHAR(100) NOT NULL,
+    dob DATE,
+    gender VARCHAR(10),
+    email VARCHAR(100) NULL -- Cho phép nhận giá trị NULL (có thể để trống)
+);
+
+-- Bật lại kiểm tra khóa ngoại
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- Thêm ít nhất 5 sinh viên (trong đó có 1 sinh viên chưa có email)
+INSERT INTO students (student_name, dob, gender, email) VALUES
 ('Nguyen Van A', '2002-05-15', 'Male', 'anguyen@example.com'),
 ('Tran Thi B', '2003-09-20', 'Female', 'btran@example.com'),
-('Le Van C', '2001-11-02', 'Male', NULL),
+('Le Van C', '2001-11-02', 'Male', NULL), -- Sinh viên không có email
 ('Pham Minh D', '2002-01-30', 'Male', 'dpham@example.com'),
 ('Hoang Lan E', '2004-07-12', 'Female', 'ehoang@example.com');
 
--- 3. Hiển thị danh sách sinh viên: mã sinh viên, họ tên, email
-SELECT student_id, full_name, email FROM students;
+-- Hiển thị toàn bộ danh sách sinh viên (mã sinh viên, họ tên, email)
+SELECT student_id, student_name, email FROM students;
