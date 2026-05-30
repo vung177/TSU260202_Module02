@@ -57,7 +57,7 @@ SELECT o.order_id,
     oi.quantity,
     oi.price
 FROM orders AS o
-    INNER JOIN order_items oi ON o.order_id = oi.order_id;
+    INNER JOIN order_items AS oi ON o.order_id = oi.order_id;
 -- c. Tinh: tong tien cua moi don hang
 SELECT order_id,
     SUM(quantity * price) AS total_amount
