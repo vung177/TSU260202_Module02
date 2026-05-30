@@ -50,7 +50,7 @@ SELECT o.order_id,
     o.order_date,
     c.customer_name
 FROM orders AS o
-    INNER JOIN customers c ON o.customer_id = c.customer_id;
+    INNER JOIN customers AS c ON o.customer_id = c.customer_id;
 -- b. Hien thi: danh sach san pham trong moi don hang
 SELECT o.order_id,
     oi.product_name,
