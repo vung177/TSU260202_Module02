@@ -38,7 +38,7 @@ FROM products
 ORDER BY price ASC;
 -- e. Thong ke so luong san pham cho tung danh muc (ke ca danh muc chua co san pham)
 SELECT c.name AS category_name,
-    COUNT(*) AS product_count
+    COUNT(p.id) AS product_count
 FROM categories c
     LEFT JOIN products p ON c.id = p.category_id
 GROUP BY c.id,
